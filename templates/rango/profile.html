@@ -1,0 +1,21 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body_block %}
+<h1>Profile</h1>
+
+{% if user.is_authenticated %}
+<div type="container">
+    <em>Username: </em>{{ user.username }} <br/>
+    <em>Email: </em>{{ user.email }}<br />
+    {% if profile and profile.website %}
+    <em>Website: </em><a href="{{ profile.website }}">{{ profile.website }}</a><br />
+    {% endif %}
+    {% if profile and profile.picture %}
+    <em>Picture: </em><br />
+    <img src="media/{{ profile.picture }}" width="150" /><br />
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

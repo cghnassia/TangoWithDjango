@@ -1,0 +1,20 @@
+{% extends 'rango/base.html' %}
+
+{% load static %}
+{% block title %} About {% endblock %}
+
+{% block body_block %}
+<div class="jumbotron">
+    Rango says: Here us the about page <br/>
+
+    {% if visits %}
+        <em>You have visited the site {{ visits }} time{{ visits|pluralize}} !</em><br />
+        <em>Last visit : {{ last_visit|date:'m/d/Y \a\t H:i' }}</em><br />
+    {% else %}
+        <it>This is you first visit</it><br />
+    {% endif %}
+
+    Come back to <a href="/rango/">Index</a>
+    <!--<script type="text/javascript" src="{% static 'base.js' %}"></script>-->
+</div>
+{% endblock %}

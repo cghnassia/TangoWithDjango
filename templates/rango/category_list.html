@@ -1,0 +1,7 @@
+<div id="cats" class="list-group">
+{% if cat_list %}
+    {% for category in cat_list %}
+    <a href="/rango/category/{{ category.url }}" class="list-group-item">{{ category.name }}</a>
+    {% endfor %}
+{% endif %}
+</div>
